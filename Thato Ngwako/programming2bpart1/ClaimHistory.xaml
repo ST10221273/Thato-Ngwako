@@ -1,0 +1,107 @@
+﻿<Window x:Class="programming2bpart1.ClaimHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Claim History" Height="500" Width="800" Background="Purple">
+
+    <Grid Margin="20">
+        <!-- Header -->
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,20">
+            <TextBlock Text="Claim History" 
+                       FontSize="28" 
+                       FontWeight="Bold" 
+                       Foreground="white" 
+                       Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <!-- Main Content: Claim History -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,60,0,60">
+            <StackPanel>
+                <!-- Individual Claim Card -->
+                <Border BorderBrush="#7B1FA2" 
+                        BorderThickness="2" 
+                        CornerRadius="8" 
+                        Margin="0,10" 
+                        Padding="10" 
+                        Background="White">
+                    <StackPanel>
+                        <!-- Claim Date and Status -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+                            <TextBlock Text="Claim Date: " FontSize="16" FontWeight="Bold" Foreground="#4A148C"/>
+                            <TextBlock Text="{Binding ClaimDate}" FontSize="16" Foreground="Black" Margin="5,0,0,0"/>
+                            <TextBlock Text="Status: " FontSize="16" FontWeight="Bold" Foreground="#4A148C" Margin="30,0,0,0"/>
+                            <TextBlock Text="{Binding Status}" FontSize="16" Foreground="Black" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <!-- Claim Description -->
+                        <TextBlock Text="Description:" FontSize="16" FontWeight="Bold" Foreground="#4A148C" />
+                        <TextBlock Text="{Binding Description}" FontSize="14" Foreground="Black" TextWrapping="Wrap" Margin="0,5,0,10"/>
+
+                        <!-- Claim Amount -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock Text="Amount: " FontSize="16" FontWeight="Bold" Foreground="#4A148C"/>
+                            <TextBlock Text="{Binding ClaimAmount}" FontSize="16" Foreground="Black" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <!-- Action Button -->
+                        <Button Content="View Details" 
+                                Width="150" 
+                                Height="35" 
+                                HorizontalAlignment="Right" 
+                                Background="#7B1FA2" 
+                                Foreground="White" 
+                                BorderThickness="0" 
+                                Margin="10,10,0,0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Control.Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <!-- Add more claim cards as needed -->
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Back Button -->
+        <Button Name="BackButton" 
+                Content="Back" 
+                Width="100" 
+                Height="40" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom" 
+                Margin="10" 
+                Background="#9575CD" 
+                Foreground="White" 
+                BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

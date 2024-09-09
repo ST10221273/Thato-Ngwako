@@ -1,0 +1,84 @@
+﻿<Window x:Class="programming2bpart1.ApproveClaims"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Approve Claims" Height="500" Width="800" Background="MediumPurple">
+    <Grid Margin="20">
+        <!-- Header -->
+        <TextBlock Text="Approved Claims" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="White" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Margin="0,10,0,0" />
+
+        <StackPanel VerticalAlignment="Top" Margin="0,60,0,0">
+            <!-- Search Section -->
+            <TextBlock Text="Find Claims" 
+                       FontSize="16" 
+                       Foreground="White" 
+                       Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBox Name="SearchTextBox" 
+                         Width="200" 
+                         Height="30" 
+                         BorderBrush="Wheat" 
+                         Margin="0,0,10,0"/>
+                <Button Name="SearchButton" 
+                        Content="Search" 
+                        Width="100" 
+                        Height="30" 
+                        Background="Purple" 
+                        Foreground="White" 
+                        BorderThickness="0"/>
+            </StackPanel>
+
+            <!-- DataGrid for Displaying Claims -->
+            <DataGrid Name="ClaimsDataGrid" 
+                      AutoGenerateColumns="False" 
+                      Height="273" 
+                      Margin="0,20,0,0" 
+                      BorderBrush="#D81B60" 
+                      Background="White"
+                      AlternatingRowBackground="#F8BBD0"
+                      GridLinesVisibility="Horizontal">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Lecturer Name" 
+                                        Binding="{Binding LecturerName}" 
+                                        Width="*"/>
+                    <DataGridTextColumn Header="Claim Date" 
+                                        Binding="{Binding ClaimDate}" 
+                                        Width="*"/>
+                    <DataGridTextColumn Header="Claim Amount" 
+                                        Binding="{Binding ClaimAmount}" 
+                                        Width="*"/>
+                    <DataGridTextColumn Header="Status" 
+                                        Binding="{Binding Status}" 
+                                        Width="*"/>
+                    <DataGridTemplateColumn Header="Action" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                    <Button Content="Approve" 
+                                            Width="80" 
+                                            Height="30" 
+                                            Background="#D81B60" 
+                                            Foreground="White" 
+                                            BorderThickness="0" 
+                                            Margin="0,0,10,0"/>
+                                    <Button Content="Reject" 
+                                            Width="80" 
+                                            Height="30" 
+                                            Background="#F48FB1" 
+                                            Foreground="White" 
+                                            BorderThickness="0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
+

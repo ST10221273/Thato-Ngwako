@@ -1,0 +1,126 @@
+﻿<Window x:Class="programming2bpart1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Contract Monthly Claim System" Height="450" Width="800" Background="#F3E5F5">
+    <Grid Margin="20">
+        <!-- Define Row Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- For Title -->
+            <RowDefinition Height="*"/>
+            <!-- For Main Content -->
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Contract Claim Application"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Foreground="#4A148C"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="0,10,0,20"
+                   Grid.Row="0" />
+
+        <!-- Main Content Grid -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Menu Panel -->
+            <Grid Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Submit Claim -->
+                <Button Name="SubmitClaimButton"
+                        Content="Submit your Claim"
+                        Background="MediumPurple"
+                        Foreground="White"
+                        BorderThickness="4"
+                        FontSize="18"
+                        Width="250"
+                        Height="50"
+                        Grid.Row="0"
+                        Margin="5"
+                        Click="SubmitClaimButton_Click"/>
+
+                <!-- Approve Claims -->
+                <Button Name="ApproveClaimsButton"
+                        Content="Approve Claims"
+                        Background="#7B1FA2"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontSize="18"
+                        Width="260"
+                        Height="50"
+                        Grid.Row="1"
+                        Margin="5"
+                        Click="ApproveClaimsButton_Click"/>
+
+                <!-- Claim History -->
+                <Button Name="ClaimHistoryButton"
+                        Content="View Claim History"
+                        Background="MediumPurple"
+                        Foreground="WhiteSmoke"
+                        BorderThickness="3"
+                        FontSize="16"
+                        Width="250"
+                        Height="50"
+                        Grid.Row="2"
+                        Margin="5"
+                        Click="ClaimHistoryButton_Click"/>
+
+                <!-- Programme Coordinator -->
+                <Button Name="ProgrammeCoordinatorButton"
+                        Content="Programme Coordinator"
+                        Background="#7B1FA2"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontSize="16"
+                        Width="260"
+                        Height="50"
+                        Grid.Row="3"
+                        Margin="5"
+                        Click="ProgrammeCoordinatorButton_Click"/>
+            </Grid>
+
+            <!-- Manual Panel -->
+            <StackPanel Margin="446,10,10,10" Grid.ColumnSpan="2">
+                <TextBlock Text="Guideline"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#4A148C"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="1. Submit Claim: Click this button to open the claim submission form"
+                           FontSize="16"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="2. Approve Claims: Click this button to open the claims approval interface."
+                           FontSize="16"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="3. View Claim History: Click this button to view the history of all claims. "
+                           FontSize="16"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock Text="4. Programme Coordinator: Click this button to access the Programme Coordinator management tools."
+                           FontSize="16"
+                           Foreground="Black"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
